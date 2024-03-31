@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Who are you?</title>
+    <link rel="stylesheet" href="help.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center-align the text */
+        }
+
+        #passwordForm {
+            display: inline-block;
+            text-align: left; /* Align form content to the left */
+            margin-top: 20px; /* Adjust the top margin as needed */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><u>Before proceeding forward, we will have to do some identification</u></h1>
+    <br>
+    <h2><u>What was the phone password you gave me on 5th September?</u></h2>
+
+    <div id="passwordForm">
+        <form onsubmit="checkPassword(event)">
+            <div>
+                <label>Password: </label>
+                <input type="password" id="passwordInput" name="password" maxlength="4" placeholder="****" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            
+            // Get the input value
+            var password = document.getElementById("passwordInput").value;
+
+            // Check if the password is correct
+            if (password === "1478") {
+                // Open "right.html" if the password is correct
+                window.open("right.html", "_blank");
+            } else {
+                // Display error message if the password is incorrect
+                alert("Invalid password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
